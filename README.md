@@ -11,7 +11,7 @@ To use this citation style, put this .bst in the same directory with .tex file, 
 \setcitestyle{aysep={}} %No comma between authors and years
 ```
 
-and insert the following code at where you want to put references
+and insert the following code where you want to put references
 ```
 \bibliographystyle{chicago-apsr-ph}
 \bibliography{} # your .bib file name in the curly brackets
