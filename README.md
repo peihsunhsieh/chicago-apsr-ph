@@ -8,13 +8,13 @@ This is the BibTex .bst file for the APSR citation style. The .bst file is adapt
 To use this citation style, put this .bst in the same directory with the .tex file, and insert the following code before `\begin{document}`
 ```
 \usepackage{natbib}
-\setcitestyle{aysep={}} %No comma between authors and years
+\setcitestyle{aysep={}} %Remove the comma between authors and years
 ```
 
 Also insert the following code where you want to put references
 ```
 \bibliographystyle{chicago-apsr-ph}
-\bibliography{} # your .bib file name in the curly brackets
+\bibliography{} % your .bib file name in the curly brackets
 
 ```
 <br/>
