@@ -14,6 +14,7 @@ To use this citation style, put this .bst in the same directory with .tex file, 
 and before the section you want to put your reference, insert
 ```
 \bibliographystyle{chicago-apsr-ph}
+\bibliography{your .bib file name}
 ```
 <br/>
 <br/>
