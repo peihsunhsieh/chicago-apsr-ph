@@ -11,7 +11,7 @@ To use this citation style, put this .bst in the same directory with .tex file, 
 \setcitestyle{aysep={}}
 ```
 
-and before the section you want to put your reference, insert
+and insert the following code at where you want to put references
 ```
 \bibliographystyle{chicago-apsr-ph}
 \bibliography{your .bib file name}
