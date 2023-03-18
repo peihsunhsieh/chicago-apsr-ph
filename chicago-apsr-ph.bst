@@ -863,8 +863,12 @@ FUNCTION {format.lab.names}
 	{ nameptr numnames =
 	    { s nameptr "{ff }{vv }{ll}{ jj}" format.name$ "others" =
 		{ " et~al." * }
-		{ ", and " * s nameptr "{vv~}{ll}" format.name$ * }
-	      if$
+		{ numnames #3 =
+			{ ", and " * s nameptr "{vv~}{ll}" format.name$ * }
+			{ " and " * s nameptr "{vv~}{ll}" format.name$ * }
+		  if$
+		}
+	    if$
 	    }
 	    { ", " * s nameptr "{vv~}{ll}" format.name$ * }
 	  if$
