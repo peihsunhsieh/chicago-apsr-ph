@@ -189,18 +189,29 @@ FUNCTION {init.state.consts}
 
 STRINGS { s t u }
 
+FUNCTION {add.period.inside.quotes}
+{ duplicate$ empty$
+    { pop$ "" }
+    { duplicate$ #-1 #2 substring$ "''" =
+        { duplicate$ #1 swap$ text.length$ #2 - substring$ add.period$ "''" * }
+        { add.period$ }
+      if$
+    }
+  if$
+}
+
 FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
     { ", " * write$ }
     { output.state after.block =
-    { add.period$ write$
+    { add.add.period.inside.quotes write$
       newline$
       "\newblock " write$
     }
     { output.state before.all =
         'write$
-        { add.period$ " " * write$ }
+        { add.add.period.inside.quotes " " * write$ }
       if$
     }
       if$
@@ -219,13 +230,13 @@ FUNCTION {output.nonnull.colon}
   output.state mid.sentence =
     { ": " * write$ }
     { output.state after.block =
-    { add.period$ write$
+    { add.period.inside.quotes write$
       newline$
       "\newblock " write$
     }
     { output.state before.all =
         'write$
-        { add.period$ " " * write$ }
+        { add.period.inside.quotes " " * write$ }
       if$
     }
       if$
@@ -269,14 +280,7 @@ FUNCTION {output.year.check}
 { year empty$
      { "empty year in " cite$ * warning$ }
      { write$
-        % " (" year * extra.label *
-        year extra.label *
-       month empty$
-          % { ")" * }
-          % { ", " * month * ")" * }
-          { }
-          { ", " * month * }
-       if$
+       year extra.label *
        mid.sentence 'output.state :=
      }
   if$
@@ -539,10 +543,29 @@ FUNCTION {format.editors}
   if$
 }
 
+FUNCTION {title.period}
+{ duplicate$ empty$
+    { pop$ "" }
+    { duplicate$ #-1 #1 substring$ "." =
+        'skip$
+        { duplicate$ #-1 #1 substring$ "?" =
+            'skip$
+            { duplicate$ #-1 #1 substring$ "!" =
+                'skip$
+                { "." * }
+              if$
+            }
+          if$
+        }
+      if$
+    }
+  if$
+}
+
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { "``" title "t" change.case$ * "''" * }
+    { "``" title "t" change.case$ title.period * "''" * }
   if$
 }
 

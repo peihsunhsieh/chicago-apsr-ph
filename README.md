@@ -1,28 +1,66 @@
 # chicago-apsr-ph
 
-This is the BibTex .bst file for the APSR citation style. The .bst file is adapted from [the official APSR template on Overleaf](https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt) and corrects two inconsistencies regarding in-text citations between the templates and the official guidelines.
+This repository provides a BibTeX `.bst` file for the APSA/APSR citation style. The file is adapted from [the official APSR submission template on Overleaf](https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt) and modifies the template to better match APSA/APSR citation conventions.
 
-1. Use *et al.* only when there are four or more authors.
-2. Add a comma between *and* and the third author when there are third authors.
+## What this style changes
 
-To use this citation style, put this .bst in the same directory as the .tex file, and insert the following code before `\begin{document}`
+Compared with the original APSR Overleaf template, this `.bst` file makes the following changes:
+
+1. Uses *et al.* only when there are four or more authors.
+2. Uses a serial comma before *and* when there are three authors.
+3. Omits publication months from reference-list entries.
+4. Places the final period of article titles inside quotation marks when the title does not already end with punctuation.
+
+For example, an article title is formatted as:
+
+```text
+“Democracy and Representation.”
 ```
+
+rather than:
+
+```text
+“Democracy and Representation”.
+```
+
+## Usage
+
+Put `chicago-apsr-ph.bst` in the same directory as your `.tex` file.
+
+Add the following lines before `\begin{document}`:
+
+```latex
 \usepackage{natbib}
-\setcitestyle{aysep={}} %Remove the comma between authors and years
+\setcitestyle{aysep={}} % Removes the comma between author and year
 ```
 
-Also insert the following code where you want to put references
-```
+Then add the following lines where you want the reference list to appear:
+
+```latex
 \bibliographystyle{chicago-apsr-ph}
-\bibliography{} % your .bib file name in the curly brackets
-
+\bibliography{your-bib-file-name}
 ```
-<br/>
-<br/>
-<br/>
 
-* *APSR - American Political Science Review Submission Template* [https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt](https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt)
-<br/>
-<br/>  
-<br/>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+Replace `your-bib-file-name` with the name of your `.bib` file, without the `.bib` extension.
+
+## Recompiling after changes
+
+If changes to the `.bst` file do not appear immediately, delete the generated auxiliary files and recompile:
+
+```text
+.aux
+.bbl
+.blg
+```
+
+Then run LaTeX, BibTeX, LaTeX, and LaTeX again.
+
+## Source
+
+This style is adapted from the *APSR - American Political Science Review Submission Template*:
+
+https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
