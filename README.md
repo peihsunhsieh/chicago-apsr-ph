@@ -1,6 +1,6 @@
 # chicago-apsr-ph
 
-[![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 This repository provides a BibTeX `.bst` file for the APSA/APSR citation style. The file is adapted from [the official APSR submission template on Overleaf](https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt) and modifies the template to better match APSA/APSR citation conventions.
 
