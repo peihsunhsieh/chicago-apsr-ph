@@ -15,15 +15,11 @@ Compared with the original APSR Overleaf template, this `.bst` file makes the fo
 
 For example, an article title is formatted as:
 
-```text
-“Democracy and Representation.”
-```
+> Ostrom, Elinor. 1998. “A Behavioral Approach to the Rational Choice Theory of Collective Action: Presidential Address, American Political Science Association, 1997.” *American Political Science Review* 92 (1): 1–22.
 
 rather than:
 
-```text
-“Democracy and Representation”.
-```
+> Ostrom, Elinor. 1998, March. “A Behavioral Approach to the Rational Choice Theory of Collective Action: Presidential Address, American Political Science Association, 1997”. American Political Science Review 92 (1): 1–22.
 
 ## Usage
 
