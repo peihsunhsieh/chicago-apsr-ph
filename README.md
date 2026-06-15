@@ -43,9 +43,8 @@ Replace `your-bib-file-name` with the name of your `.bib` file, without the `.bi
 
 ## Source
 
-This style is adapted from the *APSR - American Political Science Review Submission Template*:
+This style is adapted from the [*APSR: American Political Science Review Submission Template*](https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt) and revised to better align with APSA’s [*Style Manual for Political Science*](https://spu.libguides.com/ld.php?content_id=47605571).
 
-https://www.overleaf.com/latex/templates/apsr-american-political-science-review-submission-template/fxffppspqczt
 
 ## License
 
